@@ -1,0 +1,34 @@
+{
+  "video_33": {
+    "timeline_kappa": 0.14826041471069482,
+    "saliency_kappa": 0.6,
+    "mean_iou": 0.6550245098039216,
+    "n_matched": 4,
+    "n_a": 10,
+    "n_b": 9
+  },
+  "video_34": {
+    "timeline_kappa": 0.4780507053368847,
+    "saliency_kappa": 0.35714285714285715,
+    "mean_iou": 0.7027777777777778,
+    "n_matched": 6,
+    "n_a": 8,
+    "n_b": 8
+  },
+  "video_35": {
+    "timeline_kappa": 0.3841201716738199,
+    "saliency_kappa": 0.2258064516129032,
+    "mean_iou": 0.5535714285714286,
+    "n_matched": 6,
+    "n_a": 9,
+    "n_b": 10
+  },
+  "video_36": {
+    "timeline_kappa": 0.2542002458680509,
+    "saliency_kappa": -0.23529411764705874,
+    "mean_iou": 0.7174603174603175,
+    "n_matched": 7,
+    "n_a": 15,
+    "n_b": 11
+  }
+}

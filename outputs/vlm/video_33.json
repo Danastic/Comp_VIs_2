@@ -1,0 +1,62 @@
+{
+  "direct_events": {
+    "raw": "A bald man is standing on an indoor basketball court and talking to someone off-camera while holding two microphones. He then raises his right hand as if making a point or giving instructions. The scene transitions multiple times showing different angles including close up shots of him speaking into the microphone and wider views that include other people sitting at tables around them. At some points there appears to be text visible but it's unclear what language this might be due to low resolution quality.",
+    "events": [
+      {
+        "description": "A bald man is standing on an indoor basketball court and talking to someone off-camera while holding two microphones",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "He then raises his right hand as if making a point or giving instructions",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "The scene transitions multiple times showing different angles including close up shots of him speaking into the microphone and wider views that include other people sitting at tables around them",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "At some points there appears to be text visible but it's unclear what language this might be due to low resolution quality",
+        "start": null,
+        "end": null
+      }
+    ]
+  },
+  "direct_timed": {
+    "raw": "1. A bald man is standing on an indoor basketball court and talking to someone off camera while holding two microphones. He then bends down towards another person who appears to have fallen or collapsed onto their knees. The other people around them react by kneeling as well.",
+    "events": [
+      {
+        "description": "A bald man is standing on an indoor basketball court and talking to someone off camera while holding two microphones. He then bends down towards another person who appears to have fallen or collapsed onto their knees. The other people around them react by kneeling as well",
+        "start": null,
+        "end": null
+      }
+    ]
+  },
+  "caption_aggregate": {
+    "raw": "Salient Event 1: Man holds multiple microphones and speaks on stage; salience is high due to presence of crowd watching attentively.\nSalent Event 2: Bald man demonstrates technique for shooting basketballs indoors; focus shifts between demonstration and interaction with spectators.\nSalient Event 3: Group dances energetically under banner reading \"Tiger Den\"; participants exhibit enthusiasm and coordination.\nSalicent Event 4: People gather outside gymnasium entrance observing activities inside; attention drawn towards individuals performing dance moves within building.\nSalistent Event 5: Girl converses animatedly with female spectator during game session; engagement level suggests interest in ongoing activity.",
+    "events": [
+      {
+        "description": "Man holds multiple microphones and speaks on stage; salience is high due to presence of crowd watching attentively",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "Group dances energetically under banner reading \"Tiger Den\"; participants exhibit enthusiasm and coordination",
+        "start": null,
+        "end": null
+      }
+    ],
+    "captions": [
+      "A man with a microphone stands holding two microphones, while another person walks by him.",
+      "A bald man wearing a black hoodie stands holding an object, possibly giving instructions or demonstrating something to the camera while standing next to a basketball court with wooden flooring.",
+      "A bald man wearing a black jacket stands with his hands behind him, looking to the side while holding something up close to himself.",
+      "A bald man with a microphone stands at the edge of an indoor basketball court, speaking to someone off-camera while holding his hand up as if gesturing or emphasizing something he's saying.",
+      "A group of people are dancing together, with a man standing at the front leading them. The audience watches from their seats around the court.",
+      "A group of people are standing around a gymnasium floor with the words \"The Tiger Den\" written at its center, while others stand near banners hanging from above them.",
+      "A group of people are dancing together, with banners hanging from the ceiling above them.",
+      "A girl with a black shirt talks to another woman wearing red at the basketball court while other people watch from around her."
+    ]
+  }
+}

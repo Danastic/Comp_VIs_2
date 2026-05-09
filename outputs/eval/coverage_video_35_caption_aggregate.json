@@ -1,0 +1,50 @@
+{
+  "sims": [
+    0.13440819084644318,
+    -0.02328723669052124,
+    0.111280657351017,
+    0.12321758270263672,
+    0.12262922525405884,
+    0.08213800936937332,
+    0.18218129873275757,
+    0.14838014543056488,
+    0.1776130199432373,
+    0.024035919457674026,
+    0.1511407196521759,
+    0.0915028378367424,
+    0.15788935124874115
+  ],
+  "best_idx": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "ann": [
+    "An electronic sign at the metro station reads \"Classical special train - enjoy the music\" as passengers wait on the platform.",
+    "Passengers board the metro train",
+    "A single flutist begins playing classical music in the crowded train car",
+    "Two women sitting on the train suddenly pull out flutes and begin playing classical music, catching the attention of the surrounding passengers.",
+    "A man sitting nearby joins the performance by playing the oboe, expanding the group of musicians.",
+    "The performance escalates as a man stands up in the aisle and begins playing the violin.",
+    "A young girl stares in awe at the musicians as the music builds and more string instruments join in.",
+    "Passengers react with smiles",
+    "The climax of the performance hits as the full orchestra plays together; passengers smile, cheer, and record the event on their phones.",
+    "A man in a red jacket stands up in the middle of the crowded train and begins passionately conducting the hidden orchestra.",
+    "A close-up shows a baby in a stroller looking around with wide-eyed curiosity as the classical music plays.",
+    "The train pulls into the final station, the doors open, and passengers smile as the performance concludes.",
+    "A text overlay reveals the flash mob is an advertisement for a classical music radio station"
+  ],
+  "pred": [
+    "A series of scenes featuring various individuals engaging in different activities such as speaking and observing performances on stage; interacting through conversations indoors; performing music together within buses; showcasing artistic expressions like painting and sculpture; discussing art exhibitions; participating in live concerts; attending cultural gatherings where food is served; enjoying outdoor dining experiences under clear skies; exploring urban landscapes during twilight hours; capturing moments using cameras; celebrating special occasions with family members; experiencing public transportation rides; admiring architectural designs; reflecting upon historical figures' works; contemplating life themes depicted in artworks; sharing personal stories about love and relationships; appreciating nature views captured via camera lenses; visiting museums dedicated to specific artists; learning new skills related to arts and crafts; witnessing diverse social interactions among community groups; examining intricate details of sculptures; analyzing abstract paintings; understanding complex mathematical concepts illustrated visually; studying scientific phenomena represented artistically; visualizing philosophical ideas expressed through visual media; interpreting symbolic meanings conveyed through artwork; recognizing human emotions portrayed in creative pieces; embracing diversity in culture and identity; connecting past history with present reality; pondering existential questions presented in multimedia presentations; considering future possibilities suggested by technological advancements; evaluating societal impacts highlighted in contemporary films; assessing environmental concerns addressed in eco-friendly projects; addressing global issues reflected in international collaborations; focusing on individual growth facilitated by self-reflection techniques used in meditation practices; highlighting spiritual connections symbolized through religious symbols displayed prominently throughout the footage"
+  ]
+}

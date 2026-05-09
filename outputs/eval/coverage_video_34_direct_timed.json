@@ -1,0 +1,45 @@
+{
+  "sims": [
+    0.2568730115890503,
+    0.5621383190155029,
+    0.2950096130371094,
+    0.4026504456996918,
+    0.4662459194660187,
+    0.3776037395000458,
+    0.1855609267950058,
+    0.3357216715812683,
+    0.37861406803131104,
+    0.35453057289123535
+  ],
+  "best_idx": [
+    0,
+    0,
+    4,
+    0,
+    0,
+    0,
+    4,
+    0,
+    0,
+    0
+  ],
+  "ann": [
+    "An intro plays showing young boys playing cricket on a beach.",
+    "Dancers begin to gather and hype up the surrounding crowd on a busy city street",
+    "A woman in a yellow shirt steps into the clearing of a busy street and starts dancing, officially kicking off the flash mob.",
+    "A large group of dancers runs into the center circle, synchronizing their choreography as the massive crowd watches.",
+    "Spectators watch the performance from a balcony while rickshaws pass by the crowd",
+    "A man vigorously waves a flag from above, overlooking the massive street crowd watching the performance.",
+    "A man wearing a hat and grey tank top takes the center of the circle to perform an energetic solo breakdance routine.",
+    "A quick, chaotic cutaway shows a large white bull being led through the busy street right next to the event.",
+    "The camera pans across the massive street crowd as the full group of dancers performs their most synchronized sequence of the song.",
+    "The performance ends abruptly, and the dancers immediately scatter, blending back into the dense street crowd."
+  ],
+  "pred": [
+    "A crowd is gathered on an open area surrounded by buildings and trees. The people appear to be engaged in some sort of activity or performance",
+    "People gather around bicycles that have been placed down near them. They seem to be interacting with each other while standing close together",
+    "There's another group of individuals who stand out due to their bright clothing against the more muted colors surrounding them. One person stands prominently among this group wearing yellow attire",
+    "Two women walk side by side through what appears to be a market setting filled with various stalls selling different items. Their movements suggest they might be shopping for something specific",
+    "Individuals dressed predominantly in green traditional garments move about within a crowded space where others can also be seen walking past"
+  ]
+}

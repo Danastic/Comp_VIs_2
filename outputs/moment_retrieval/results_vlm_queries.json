@@ -1,0 +1,210 @@
+{
+  "video_33": [
+    {
+      "query": "A bald man is standing on an indoor basketball court and talking to someone off-camera while holding two microphones",
+      "pred": [
+        18.018,
+        21.021,
+        0.3191331624984741
+      ],
+      "best_iou": 0.0,
+      "best_gt": null
+    },
+    {
+      "query": "He then raises his right hand as if making a point or giving instructions",
+      "pred": [
+        48.048,
+        51.051,
+        0.23677277565002441
+      ],
+      "best_iou": 0.15805263157894736,
+      "best_gt": [
+        46,
+        65
+      ]
+    },
+    {
+      "query": "The scene transitions multiple times showing different angles including close up shots of him speaking into the microphone and wider views that include other people sitting at tables around them",
+      "pred": [
+        102.102,
+        105.105,
+        0.19365596771240234
+      ],
+      "best_iou": 0.0,
+      "best_gt": null
+    },
+    {
+      "query": "At some points there appears to be text visible but it's unclear what language this might be due to low resolution quality",
+      "pred": [
+        102.102,
+        105.105,
+        0.17022919654846191
+      ],
+      "best_iou": 0.0,
+      "best_gt": null
+    }
+  ],
+  "video_34": [
+    {
+      "query": "A crowd is gathered on an open area and some people appear to be dancing or performing",
+      "pred": [
+        43.043,
+        46.046,
+        0.2664637565612793
+      ],
+      "best_iou": 0.0,
+      "best_gt": null
+    },
+    {
+      "query": "The scene then shifts indoors where there's another group standing around something that looks like it could be bicycles",
+      "pred": [
+        29.028999999999996,
+        32.032,
+        0.21339178085327148
+      ],
+      "best_iou": 0.24539342629482128,
+      "best_gt": [
+        24,
+        31
+      ]
+    },
+    {
+      "query": "Later scenes show more groups inside buildings as well as outside near shops",
+      "pred": [
+        117.11699999999999,
+        120.11999999999999,
+        0.20875167846679688
+      ],
+      "best_iou": 0.0,
+      "best_gt": null
+    },
+    {
+      "query": "Finally, we see someone walking down what appears to be a street lined by trees and other structures",
+      "pred": [
+        135.135,
+        138.13799999999998,
+        0.1958150863647461
+      ],
+      "best_iou": 0.5004999999999976,
+      "best_gt": [
+        134,
+        140
+      ]
+    }
+  ],
+  "video_35": [
+    {
+      "query": "A black screen fades to reveal two gray cubes on a reflective surface against a dark blue background",
+      "pred": [
+        3.003,
+        6.006,
+        0.25446417927742004
+      ],
+      "best_iou": 0.0,
+      "best_gt": null
+    },
+    {
+      "query": "The scene then shifts indoors where people stand and move around near an escalator or elevator shaft",
+      "pred": [
+        24.024,
+        27.027,
+        0.23456889390945435
+      ],
+      "best_iou": 0.6006,
+      "best_gt": [
+        24,
+        29
+      ]
+    },
+    {
+      "query": "Later scenes show individuals inside what appears to be a train car; some wear winter clothing while others have their hands raised as if waving at someone outside the frame",
+      "pred": [
+        129.129,
+        132.132,
+        0.19971132278442383
+      ],
+      "best_iou": 0.4025518788558619,
+      "best_gt": [
+        125,
+        132
+      ]
+    },
+    {
+      "query": "Finally, passengers huddle together for warmth during travel conditions that suggest cold weather",
+      "pred": [
+        27.027,
+        30.03,
+        0.212199866771698
+      ],
+      "best_iou": 0.32719734660033145,
+      "best_gt": [
+        24,
+        29
+      ]
+    }
+  ],
+  "video_36": [
+    {
+      "query": "A man wearing glasses and a cap is standing next to some equipment on grass near trees",
+      "pred": [
+        160.16,
+        163.163,
+        0.20914125442504883
+      ],
+      "best_iou": 0.0,
+      "best_gt": null
+    },
+    {
+      "query": "He appears to be talking or explaining something while looking at an object he holds up close to his face",
+      "pred": [
+        11.011000000000001,
+        14.014000000000001,
+        0.19251292943954468
+      ],
+      "best_iou": 0.3966892700438767,
+      "best_gt": [
+        9,
+        13
+      ]
+    },
+    {
+      "query": "The background includes wooden fences and plants",
+      "pred": [
+        62.062,
+        65.065,
+        0.2001640796661377
+      ],
+      "best_iou": 0.429,
+      "best_gt": [
+        59,
+        66
+      ]
+    },
+    {
+      "query": "Later scenes show him holding different objects like beeshives and bee smoker boxes",
+      "pred": [
+        41.041000000000004,
+        44.044000000000004,
+        0.27931928634643555
+      ],
+      "best_iou": 0.1766470588235294,
+      "best_gt": [
+        34,
+        51
+      ]
+    },
+    {
+      "query": "Finally, we see another person's hands working inside what looks like a honeycomb structure made out of wood shavings",
+      "pred": [
+        91.09100000000001,
+        94.09400000000001,
+        0.2653837203979492
+      ],
+      "best_iou": 0.273,
+      "best_gt": [
+        91,
+        102
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "direct_events": {
+    "raw": "A man wearing glasses and a cap is standing next to some equipment on grass near trees. He appears to be talking or explaining something while looking at an object he holds up close to his face. The background includes wooden fences and plants. Later scenes show him holding different objects like beeshives and bee smoker boxes. Finally, we see another person's hands working inside what looks like a honeycomb structure made out of wood shavings.",
+    "events": [
+      {
+        "description": "A man wearing glasses and a cap is standing next to some equipment on grass near trees",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "He appears to be talking or explaining something while looking at an object he holds up close to his face",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "The background includes wooden fences and plants",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "Later scenes show him holding different objects like beeshives and bee smoker boxes",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "Finally, we see another person's hands working inside what looks like a honeycomb structure made out of wood shavings",
+        "start": null,
+        "end": null
+      }
+    ]
+  },
+  "direct_timed": {
+    "raw": "1. A man wearing glasses and a cap is standing outside holding something.",
+    "events": [
+      {
+        "description": "A man wearing glasses and a cap is standing outside holding something",
+        "start": null,
+        "end": null
+      }
+    ]
+  },
+  "caption_aggregate": {
+    "raw": "Salient Event 1: The scene transitions between various settings including outdoors where people interact with nature (bees), indoors by someone examining a container labeled \"HONEY\", and back out again showing different individuals interacting within their environments.\n\nSalent Event 2: Various scenes show interactions involving beekeeping equipment like hives containing bees, containers being handled inside homes, and outdoor activities such as looking through windows onto gardens. \n\nSalentEvent 3: There is also mention of natural elements like flowers on bushes and leaves falling off branches which suggest seasonal changes affecting both flora and fauna.",
+    "events": [
+      {
+        "description": "The scene transitions between various settings including outdoors where people interact with nature (bees), indoors by someone examining a container labeled \"HONEY\", and back out again showing different individuals interacting within their environments",
+        "start": null,
+        "end": null
+      }
+    ],
+    "captions": [
+      "A black screen with no visible objects or text present.",
+      "An elderly man wearing a red baseball cap, denim overalls with suspenders, and glasses bends over to pick up something from the ground while standing next to an old wooden fence that has some boxes placed near it.",
+      "A man holding a beehive with bees flying around it.",
+      "A group of bees are crawling over a red wall with black graffiti that says \"102\".",
+      "An elderly man wearing a cap stands outside talking to the camera with trees behind him.",
+      "An elderly man wearing a plaid shirt, glasses, and holding an open jar of honey with the label \"Honey\" visible as he looks at it closely while standing outside his house next to some plants.",
+      "A person's hand reaches for a jar with white lid from the shelf of jars filled with food items.",
+      "A black background with the words \"Cinematography Jack D Hubbard\" written across it."
+    ]
+  }
+}

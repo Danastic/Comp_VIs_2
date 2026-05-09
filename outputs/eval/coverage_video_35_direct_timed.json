@@ -1,0 +1,50 @@
+{
+  "sims": [
+    0.19699296355247498,
+    0.18279793858528137,
+    0.09446461498737335,
+    0.06255359947681427,
+    0.10003157705068588,
+    0.3261406421661377,
+    0.11008092761039734,
+    0.25413060188293457,
+    0.18060684204101562,
+    0.30318325757980347,
+    0.15834300220012665,
+    0.15721076726913452,
+    0.17066733539104462
+  ],
+  "best_idx": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "ann": [
+    "An electronic sign at the metro station reads \"Classical special train - enjoy the music\" as passengers wait on the platform.",
+    "Passengers board the metro train",
+    "A single flutist begins playing classical music in the crowded train car",
+    "Two women sitting on the train suddenly pull out flutes and begin playing classical music, catching the attention of the surrounding passengers.",
+    "A man sitting nearby joins the performance by playing the oboe, expanding the group of musicians.",
+    "The performance escalates as a man stands up in the aisle and begins playing the violin.",
+    "A young girl stares in awe at the musicians as the music builds and more string instruments join in.",
+    "Passengers react with smiles",
+    "The climax of the performance hits as the full orchestra plays together; passengers smile, cheer, and record the event on their phones.",
+    "A man in a red jacket stands up in the middle of the crowded train and begins passionately conducting the hidden orchestra.",
+    "A close-up shows a baby in a stroller looking around with wide-eyed curiosity as the classical music plays.",
+    "The train pulls into the final station, the doors open, and passengers smile as the performance concludes.",
+    "A text overlay reveals the flash mob is an advertisement for a classical music radio station"
+  ],
+  "pred": [
+    "A person is standing on an escalator and talking to another individual wearing a black jacket. The background shows other people walking up or down the stairs"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "direct_events": {
+    "raw": "A crowd is gathered on an open area and some people appear to be dancing or performing. The scene then shifts indoors where there's another group standing around something that looks like it could be bicycles. Later scenes show more groups inside buildings as well as outside near shops. Finally, we see someone walking down what appears to be a street lined by trees and other structures.",
+    "events": [
+      {
+        "description": "A crowd is gathered on an open area and some people appear to be dancing or performing",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "The scene then shifts indoors where there's another group standing around something that looks like it could be bicycles",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "Later scenes show more groups inside buildings as well as outside near shops",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "Finally, we see someone walking down what appears to be a street lined by trees and other structures",
+        "start": null,
+        "end": null
+      }
+    ]
+  },
+  "direct_timed": {
+    "raw": "1. A crowd is gathered on an open area surrounded by buildings and trees. The people appear to be engaged in some sort of activity or performance. \n2. People gather around bicycles that have been placed down near them. They seem to be interacting with each other while standing close together. \n3. There's another group of individuals who stand out due to their bright clothing against the more muted colors surrounding them. One person stands prominently among this group wearing yellow attire. \n4. Two women walk side by side through what appears to be a market setting filled with various stalls selling different items. Their movements suggest they might be shopping for something specific. \n5. Individuals dressed predominantly in green traditional garments move about within a crowded space where others can also be seen walking past.",
+    "events": [
+      {
+        "description": "A crowd is gathered on an open area surrounded by buildings and trees. The people appear to be engaged in some sort of activity or performance",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "People gather around bicycles that have been placed down near them. They seem to be interacting with each other while standing close together",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "There's another group of individuals who stand out due to their bright clothing against the more muted colors surrounding them. One person stands prominently among this group wearing yellow attire",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "Two women walk side by side through what appears to be a market setting filled with various stalls selling different items. Their movements suggest they might be shopping for something specific",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "Individuals dressed predominantly in green traditional garments move about within a crowded space where others can also be seen walking past",
+        "start": null,
+        "end": null
+      }
+    ]
+  },
+  "caption_aggregate": {
+    "raw": "Salient Event 1: Crowd gathers around a performer on stage at night.\nSalent Event 2: Group dances energetically outdoors during daytime; spectators watch attentively.\nSalient Event 3: Man performs acrobatic moves near cityscape backdrop; attendees cheer enthusiastically.\nSalicent Event 4: Large gathering watches performances inside a grand venue; participants engage actively.\nSalcient Event 5: Woman stands out amidst lively outdoor scene featuring diverse attire and activities.\nSalicient Event 6: Black screen resumes without any discernible content after previous scenes' conclusion.",
+    "events": [
+      {
+        "description": "Crowd gathers around a performer on stage at night",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "Man performs acrobatic moves near cityscape backdrop; attendees cheer enthusiastically",
+        "start": null,
+        "end": null
+      }
+    ],
+    "captions": [
+      "A black screen with no visible objects or text present.",
+      "A crowd of people are gathered around a man who appears to be dancing or performing for them, with cars parked behind him.",
+      "A group of people are dancing around a circle with the crowd watching from above.",
+      "A group of people are standing together, some wearing red shirts while others wear blue or other colors. They appear to be dancing as they move around the area. The crowd seems excited with many individuals raising their hands up into the air.",
+      "A man wearing a black tank top, gray shorts with white stripes, and no shirt over his head runs down the street while holding onto an object that appears to be connected by ropes or chains. The background shows buildings of various sizes under clear blue skies.",
+      "A large crowd of people are gathered outside a building, watching as performers dance or act out something for them to enjoy. The dancers appear happy with their performance while the audience seems engaged by it all.",
+      "A group of people are dancing together, with a woman wearing pink standing out among them. The background shows buildings that have balconies visible from the street level.",
+      "A black screen with no visible objects or text present."
+    ]
+  }
+}

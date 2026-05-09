@@ -1,0 +1,53 @@
+{
+  "sims": [
+    0.3633679151535034,
+    0.41293373703956604,
+    0.3666220009326935,
+    0.31167611479759216,
+    0.18461333215236664,
+    0.3982921540737152,
+    0.16560298204421997,
+    0.5341824293136597,
+    0.3275115191936493,
+    0.2900717556476593,
+    0.25054219365119934,
+    0.3770214319229126,
+    0.24064138531684875
+  ],
+  "best_idx": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    1,
+    2,
+    3,
+    3,
+    2,
+    2,
+    2,
+    1
+  ],
+  "ann": [
+    "An electronic sign at the metro station reads \"Classical special train - enjoy the music\" as passengers wait on the platform.",
+    "Passengers board the metro train",
+    "A single flutist begins playing classical music in the crowded train car",
+    "Two women sitting on the train suddenly pull out flutes and begin playing classical music, catching the attention of the surrounding passengers.",
+    "A man sitting nearby joins the performance by playing the oboe, expanding the group of musicians.",
+    "The performance escalates as a man stands up in the aisle and begins playing the violin.",
+    "A young girl stares in awe at the musicians as the music builds and more string instruments join in.",
+    "Passengers react with smiles",
+    "The climax of the performance hits as the full orchestra plays together; passengers smile, cheer, and record the event on their phones.",
+    "A man in a red jacket stands up in the middle of the crowded train and begins passionately conducting the hidden orchestra.",
+    "A close-up shows a baby in a stroller looking around with wide-eyed curiosity as the classical music plays.",
+    "The train pulls into the final station, the doors open, and passengers smile as the performance concludes.",
+    "A text overlay reveals the flash mob is an advertisement for a classical music radio station"
+  ],
+  "pred": [
+    "A black screen fades to reveal two gray cubes on a reflective surface against a dark blue background",
+    "The scene then shifts indoors where people stand and move around near an escalator or elevator shaft",
+    "Later scenes show individuals inside what appears to be a train car; some wear winter clothing while others have their hands raised as if waving at someone outside the frame",
+    "Finally, passengers huddle together for warmth during travel conditions that suggest cold weather"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "direct_events": {
+    "raw": "A black screen fades to reveal two gray cubes on a reflective surface against a dark blue background. The scene then shifts indoors where people stand and move around near an escalator or elevator shaft. Later scenes show individuals inside what appears to be a train car; some wear winter clothing while others have their hands raised as if waving at someone outside the frame. Finally, passengers huddle together for warmth during travel conditions that suggest cold weather.",
+    "events": [
+      {
+        "description": "A black screen fades to reveal two gray cubes on a reflective surface against a dark blue background",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "The scene then shifts indoors where people stand and move around near an escalator or elevator shaft",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "Later scenes show individuals inside what appears to be a train car; some wear winter clothing while others have their hands raised as if waving at someone outside the frame",
+        "start": null,
+        "end": null
+      },
+      {
+        "description": "Finally, passengers huddle together for warmth during travel conditions that suggest cold weather",
+        "start": null,
+        "end": null
+      }
+    ]
+  },
+  "direct_timed": {
+    "raw": "1. A person is standing on an escalator and talking to another individual wearing a black jacket. The background shows other people walking up or down the stairs.",
+    "events": [
+      {
+        "description": "A person is standing on an escalator and talking to another individual wearing a black jacket. The background shows other people walking up or down the stairs",
+        "start": null,
+        "end": null
+      }
+    ]
+  },
+  "caption_aggregate": {
+    "raw": "Salient Event N: A series of scenes featuring various individuals engaging in different activities such as speaking and observing performances on stage; interacting through conversations indoors; performing music together within buses; showcasing artistic expressions like painting and sculpture; discussing art exhibitions; participating in live concerts; attending cultural gatherings where food is served; enjoying outdoor dining experiences under clear skies; exploring urban landscapes during twilight hours; capturing moments using cameras; celebrating special occasions with family members; experiencing public transportation rides; admiring architectural designs; reflecting upon historical figures' works; contemplating life themes depicted in artworks; sharing personal stories about love and relationships; appreciating nature views captured via camera lenses; visiting museums dedicated to specific artists; learning new skills related to arts and crafts; witnessing diverse social interactions among community groups; examining intricate details of sculptures; analyzing abstract paintings; understanding complex mathematical concepts illustrated visually; studying scientific phenomena represented artistically; visualizing philosophical ideas expressed through visual media; interpreting symbolic meanings conveyed through artwork; recognizing human emotions portrayed in creative pieces; embracing diversity in culture and identity; connecting past history with present reality; pondering existential questions presented in multimedia presentations; considering future possibilities suggested by technological advancements; evaluating societal impacts highlighted in contemporary films; assessing environmental concerns addressed in eco-friendly projects; addressing global issues reflected in international collaborations; focusing on individual growth facilitated by self-reflection techniques used in meditation practices; highlighting spiritual connections symbolized through religious symbols displayed prominently throughout the footage.",
+    "events": [
+      {
+        "description": "A series of scenes featuring various individuals engaging in different activities such as speaking and observing performances on stage; interacting through conversations indoors; performing music together within buses; showcasing artistic expressions like painting and sculpture; discussing art exhibitions; participating in live concerts; attending cultural gatherings where food is served; enjoying outdoor dining experiences under clear skies; exploring urban landscapes during twilight hours; capturing moments using cameras; celebrating special occasions with family members; experiencing public transportation rides; admiring architectural designs; reflecting upon historical figures' works; contemplating life themes depicted in artworks; sharing personal stories about love and relationships; appreciating nature views captured via camera lenses; visiting museums dedicated to specific artists; learning new skills related to arts and crafts; witnessing diverse social interactions among community groups; examining intricate details of sculptures; analyzing abstract paintings; understanding complex mathematical concepts illustrated visually; studying scientific phenomena represented artistically; visualizing philosophical ideas expressed through visual media; interpreting symbolic meanings conveyed through artwork; recognizing human emotions portrayed in creative pieces; embracing diversity in culture and identity; connecting past history with present reality; pondering existential questions presented in multimedia presentations; considering future possibilities suggested by technological advancements; evaluating societal impacts highlighted in contemporary films; assessing environmental concerns addressed in eco-friendly projects; addressing global issues reflected in international collaborations; focusing on individual growth facilitated by self-reflection techniques used in meditation practices; highlighting spiritual connections symbolized through religious symbols displayed prominently throughout the footage",
+        "start": null,
+        "end": null
+      }
+    ],
+    "captions": [
+      "A 3d rendering of a grey cube with blue lighting behind it.",
+      "A bald man wearing a black jacket talks to another person with his hand up near their face, while standing next to them are two other people who appear to be listening or waiting for something.",
+      "A young girl playing the flute with a group of people watching her play.",
+      "A woman wearing a pink jacket holds up her cell phone to take pictures of the violins being played by other people at an event or gathering.",
+      "A group of people are playing musical instruments inside a bus while others watch them play, with yellow poles hanging from the ceiling above their heads.",
+      "A man playing the violin with a blurred background of other musicians.",
+      "A man with glasses talking to another older gentleman while wearing headphones.",
+      "The Casagl Channel logo with Claudio Silva Aravena's name below it, set against a dark blue background of intersecting lines."
+    ]
+  }
+}

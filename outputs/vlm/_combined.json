@@ -1,0 +1,265 @@
+{
+  "video_33": {
+    "direct_events": {
+      "raw": "A bald man is standing on an indoor basketball court and talking to someone off-camera while holding two microphones. He then raises his right hand as if making a point or giving instructions. The scene transitions multiple times showing different angles including close up shots of him speaking into the microphone and wider views that include other people sitting at tables around them. At some points there appears to be text visible but it's unclear what language this might be due to low resolution quality.",
+      "events": [
+        {
+          "description": "A bald man is standing on an indoor basketball court and talking to someone off-camera while holding two microphones",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "He then raises his right hand as if making a point or giving instructions",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "The scene transitions multiple times showing different angles including close up shots of him speaking into the microphone and wider views that include other people sitting at tables around them",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "At some points there appears to be text visible but it's unclear what language this might be due to low resolution quality",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    "direct_timed": {
+      "raw": "1. A bald man is standing on an indoor basketball court and talking to someone off camera while holding two microphones. He then bends down towards another person who appears to have fallen or collapsed onto their knees. The other people around them react by kneeling as well.",
+      "events": [
+        {
+          "description": "A bald man is standing on an indoor basketball court and talking to someone off camera while holding two microphones. He then bends down towards another person who appears to have fallen or collapsed onto their knees. The other people around them react by kneeling as well",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    "caption_aggregate": {
+      "raw": "Salient Event 1: Man holds multiple microphones and speaks on stage; salience is high due to presence of crowd watching attentively.\nSalent Event 2: Bald man demonstrates technique for shooting basketballs indoors; focus shifts between demonstration and interaction with spectators.\nSalient Event 3: Group dances energetically under banner reading \"Tiger Den\"; participants exhibit enthusiasm and coordination.\nSalicent Event 4: People gather outside gymnasium entrance observing activities inside; attention drawn towards individuals performing dance moves within building.\nSalistent Event 5: Girl converses animatedly with female spectator during game session; engagement level suggests interest in ongoing activity.",
+      "events": [
+        {
+          "description": "Man holds multiple microphones and speaks on stage; salience is high due to presence of crowd watching attentively",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "Group dances energetically under banner reading \"Tiger Den\"; participants exhibit enthusiasm and coordination",
+          "start": null,
+          "end": null
+        }
+      ],
+      "captions": [
+        "A man with a microphone stands holding two microphones, while another person walks by him.",
+        "A bald man wearing a black hoodie stands holding an object, possibly giving instructions or demonstrating something to the camera while standing next to a basketball court with wooden flooring.",
+        "A bald man wearing a black jacket stands with his hands behind him, looking to the side while holding something up close to himself.",
+        "A bald man with a microphone stands at the edge of an indoor basketball court, speaking to someone off-camera while holding his hand up as if gesturing or emphasizing something he's saying.",
+        "A group of people are dancing together, with a man standing at the front leading them. The audience watches from their seats around the court.",
+        "A group of people are standing around a gymnasium floor with the words \"The Tiger Den\" written at its center, while others stand near banners hanging from above them.",
+        "A group of people are dancing together, with banners hanging from the ceiling above them.",
+        "A girl with a black shirt talks to another woman wearing red at the basketball court while other people watch from around her."
+      ]
+    }
+  },
+  "video_34": {
+    "direct_events": {
+      "raw": "A crowd is gathered on an open area and some people appear to be dancing or performing. The scene then shifts indoors where there's another group standing around something that looks like it could be bicycles. Later scenes show more groups inside buildings as well as outside near shops. Finally, we see someone walking down what appears to be a street lined by trees and other structures.",
+      "events": [
+        {
+          "description": "A crowd is gathered on an open area and some people appear to be dancing or performing",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "The scene then shifts indoors where there's another group standing around something that looks like it could be bicycles",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "Later scenes show more groups inside buildings as well as outside near shops",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "Finally, we see someone walking down what appears to be a street lined by trees and other structures",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    "direct_timed": {
+      "raw": "1. A crowd is gathered on an open area surrounded by buildings and trees. The people appear to be engaged in some sort of activity or performance. \n2. People gather around bicycles that have been placed down near them. They seem to be interacting with each other while standing close together. \n3. There's another group of individuals who stand out due to their bright clothing against the more muted colors surrounding them. One person stands prominently among this group wearing yellow attire. \n4. Two women walk side by side through what appears to be a market setting filled with various stalls selling different items. Their movements suggest they might be shopping for something specific. \n5. Individuals dressed predominantly in green traditional garments move about within a crowded space where others can also be seen walking past.",
+      "events": [
+        {
+          "description": "A crowd is gathered on an open area surrounded by buildings and trees. The people appear to be engaged in some sort of activity or performance",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "People gather around bicycles that have been placed down near them. They seem to be interacting with each other while standing close together",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "There's another group of individuals who stand out due to their bright clothing against the more muted colors surrounding them. One person stands prominently among this group wearing yellow attire",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "Two women walk side by side through what appears to be a market setting filled with various stalls selling different items. Their movements suggest they might be shopping for something specific",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "Individuals dressed predominantly in green traditional garments move about within a crowded space where others can also be seen walking past",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    "caption_aggregate": {
+      "raw": "Salient Event 1: Crowd gathers around a performer on stage at night.\nSalent Event 2: Group dances energetically outdoors during daytime; spectators watch attentively.\nSalient Event 3: Man performs acrobatic moves near cityscape backdrop; attendees cheer enthusiastically.\nSalicent Event 4: Large gathering watches performances inside a grand venue; participants engage actively.\nSalcient Event 5: Woman stands out amidst lively outdoor scene featuring diverse attire and activities.\nSalicient Event 6: Black screen resumes without any discernible content after previous scenes' conclusion.",
+      "events": [
+        {
+          "description": "Crowd gathers around a performer on stage at night",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "Man performs acrobatic moves near cityscape backdrop; attendees cheer enthusiastically",
+          "start": null,
+          "end": null
+        }
+      ],
+      "captions": [
+        "A black screen with no visible objects or text present.",
+        "A crowd of people are gathered around a man who appears to be dancing or performing for them, with cars parked behind him.",
+        "A group of people are dancing around a circle with the crowd watching from above.",
+        "A group of people are standing together, some wearing red shirts while others wear blue or other colors. They appear to be dancing as they move around the area. The crowd seems excited with many individuals raising their hands up into the air.",
+        "A man wearing a black tank top, gray shorts with white stripes, and no shirt over his head runs down the street while holding onto an object that appears to be connected by ropes or chains. The background shows buildings of various sizes under clear blue skies.",
+        "A large crowd of people are gathered outside a building, watching as performers dance or act out something for them to enjoy. The dancers appear happy with their performance while the audience seems engaged by it all.",
+        "A group of people are dancing together, with a woman wearing pink standing out among them. The background shows buildings that have balconies visible from the street level.",
+        "A black screen with no visible objects or text present."
+      ]
+    }
+  },
+  "video_35": {
+    "direct_events": {
+      "raw": "A black screen fades to reveal two gray cubes on a reflective surface against a dark blue background. The scene then shifts indoors where people stand and move around near an escalator or elevator shaft. Later scenes show individuals inside what appears to be a train car; some wear winter clothing while others have their hands raised as if waving at someone outside the frame. Finally, passengers huddle together for warmth during travel conditions that suggest cold weather.",
+      "events": [
+        {
+          "description": "A black screen fades to reveal two gray cubes on a reflective surface against a dark blue background",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "The scene then shifts indoors where people stand and move around near an escalator or elevator shaft",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "Later scenes show individuals inside what appears to be a train car; some wear winter clothing while others have their hands raised as if waving at someone outside the frame",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "Finally, passengers huddle together for warmth during travel conditions that suggest cold weather",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    "direct_timed": {
+      "raw": "1. A person is standing on an escalator and talking to another individual wearing a black jacket. The background shows other people walking up or down the stairs.",
+      "events": [
+        {
+          "description": "A person is standing on an escalator and talking to another individual wearing a black jacket. The background shows other people walking up or down the stairs",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    "caption_aggregate": {
+      "raw": "Salient Event N: A series of scenes featuring various individuals engaging in different activities such as speaking and observing performances on stage; interacting through conversations indoors; performing music together within buses; showcasing artistic expressions like painting and sculpture; discussing art exhibitions; participating in live concerts; attending cultural gatherings where food is served; enjoying outdoor dining experiences under clear skies; exploring urban landscapes during twilight hours; capturing moments using cameras; celebrating special occasions with family members; experiencing public transportation rides; admiring architectural designs; reflecting upon historical figures' works; contemplating life themes depicted in artworks; sharing personal stories about love and relationships; appreciating nature views captured via camera lenses; visiting museums dedicated to specific artists; learning new skills related to arts and crafts; witnessing diverse social interactions among community groups; examining intricate details of sculptures; analyzing abstract paintings; understanding complex mathematical concepts illustrated visually; studying scientific phenomena represented artistically; visualizing philosophical ideas expressed through visual media; interpreting symbolic meanings conveyed through artwork; recognizing human emotions portrayed in creative pieces; embracing diversity in culture and identity; connecting past history with present reality; pondering existential questions presented in multimedia presentations; considering future possibilities suggested by technological advancements; evaluating societal impacts highlighted in contemporary films; assessing environmental concerns addressed in eco-friendly projects; addressing global issues reflected in international collaborations; focusing on individual growth facilitated by self-reflection techniques used in meditation practices; highlighting spiritual connections symbolized through religious symbols displayed prominently throughout the footage.",
+      "events": [
+        {
+          "description": "A series of scenes featuring various individuals engaging in different activities such as speaking and observing performances on stage; interacting through conversations indoors; performing music together within buses; showcasing artistic expressions like painting and sculpture; discussing art exhibitions; participating in live concerts; attending cultural gatherings where food is served; enjoying outdoor dining experiences under clear skies; exploring urban landscapes during twilight hours; capturing moments using cameras; celebrating special occasions with family members; experiencing public transportation rides; admiring architectural designs; reflecting upon historical figures' works; contemplating life themes depicted in artworks; sharing personal stories about love and relationships; appreciating nature views captured via camera lenses; visiting museums dedicated to specific artists; learning new skills related to arts and crafts; witnessing diverse social interactions among community groups; examining intricate details of sculptures; analyzing abstract paintings; understanding complex mathematical concepts illustrated visually; studying scientific phenomena represented artistically; visualizing philosophical ideas expressed through visual media; interpreting symbolic meanings conveyed through artwork; recognizing human emotions portrayed in creative pieces; embracing diversity in culture and identity; connecting past history with present reality; pondering existential questions presented in multimedia presentations; considering future possibilities suggested by technological advancements; evaluating societal impacts highlighted in contemporary films; assessing environmental concerns addressed in eco-friendly projects; addressing global issues reflected in international collaborations; focusing on individual growth facilitated by self-reflection techniques used in meditation practices; highlighting spiritual connections symbolized through religious symbols displayed prominently throughout the footage",
+          "start": null,
+          "end": null
+        }
+      ],
+      "captions": [
+        "A 3d rendering of a grey cube with blue lighting behind it.",
+        "A bald man wearing a black jacket talks to another person with his hand up near their face, while standing next to them are two other people who appear to be listening or waiting for something.",
+        "A young girl playing the flute with a group of people watching her play.",
+        "A woman wearing a pink jacket holds up her cell phone to take pictures of the violins being played by other people at an event or gathering.",
+        "A group of people are playing musical instruments inside a bus while others watch them play, with yellow poles hanging from the ceiling above their heads.",
+        "A man playing the violin with a blurred background of other musicians.",
+        "A man with glasses talking to another older gentleman while wearing headphones.",
+        "The Casagl Channel logo with Claudio Silva Aravena's name below it, set against a dark blue background of intersecting lines."
+      ]
+    }
+  },
+  "video_36": {
+    "direct_events": {
+      "raw": "A man wearing glasses and a cap is standing next to some equipment on grass near trees. He appears to be talking or explaining something while looking at an object he holds up close to his face. The background includes wooden fences and plants. Later scenes show him holding different objects like beeshives and bee smoker boxes. Finally, we see another person's hands working inside what looks like a honeycomb structure made out of wood shavings.",
+      "events": [
+        {
+          "description": "A man wearing glasses and a cap is standing next to some equipment on grass near trees",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "He appears to be talking or explaining something while looking at an object he holds up close to his face",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "The background includes wooden fences and plants",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "Later scenes show him holding different objects like beeshives and bee smoker boxes",
+          "start": null,
+          "end": null
+        },
+        {
+          "description": "Finally, we see another person's hands working inside what looks like a honeycomb structure made out of wood shavings",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    "direct_timed": {
+      "raw": "1. A man wearing glasses and a cap is standing outside holding something.",
+      "events": [
+        {
+          "description": "A man wearing glasses and a cap is standing outside holding something",
+          "start": null,
+          "end": null
+        }
+      ]
+    },
+    "caption_aggregate": {
+      "raw": "Salient Event 1: The scene transitions between various settings including outdoors where people interact with nature (bees), indoors by someone examining a container labeled \"HONEY\", and back out again showing different individuals interacting within their environments.\n\nSalent Event 2: Various scenes show interactions involving beekeeping equipment like hives containing bees, containers being handled inside homes, and outdoor activities such as looking through windows onto gardens. \n\nSalentEvent 3: There is also mention of natural elements like flowers on bushes and leaves falling off branches which suggest seasonal changes affecting both flora and fauna.",
+      "events": [
+        {
+          "description": "The scene transitions between various settings including outdoors where people interact with nature (bees), indoors by someone examining a container labeled \"HONEY\", and back out again showing different individuals interacting within their environments",
+          "start": null,
+          "end": null
+        }
+      ],
+      "captions": [
+        "A black screen with no visible objects or text present.",
+        "An elderly man wearing a red baseball cap, denim overalls with suspenders, and glasses bends over to pick up something from the ground while standing next to an old wooden fence that has some boxes placed near it.",
+        "A man holding a beehive with bees flying around it.",
+        "A group of bees are crawling over a red wall with black graffiti that says \"102\".",
+        "An elderly man wearing a cap stands outside talking to the camera with trees behind him.",
+        "An elderly man wearing a plaid shirt, glasses, and holding an open jar of honey with the label \"Honey\" visible as he looks at it closely while standing outside his house next to some plants.",
+        "A person's hand reaches for a jar with white lid from the shelf of jars filled with food items.",
+        "A black background with the words \"Cinematography Jack D Hubbard\" written across it."
+      ]
+    }
+  }
+}

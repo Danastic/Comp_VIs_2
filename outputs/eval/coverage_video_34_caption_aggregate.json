@@ -1,0 +1,42 @@
+{
+  "sims": [
+    0.1616683453321457,
+    0.4478752017021179,
+    0.27406740188598633,
+    0.33917564153671265,
+    0.34990525245666504,
+    0.5210296511650085,
+    0.41099798679351807,
+    0.16873888671398163,
+    0.39575037360191345,
+    0.3698961138725281
+  ],
+  "best_idx": [
+    1,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0
+  ],
+  "ann": [
+    "An intro plays showing young boys playing cricket on a beach.",
+    "Dancers begin to gather and hype up the surrounding crowd on a busy city street",
+    "A woman in a yellow shirt steps into the clearing of a busy street and starts dancing, officially kicking off the flash mob.",
+    "A large group of dancers runs into the center circle, synchronizing their choreography as the massive crowd watches.",
+    "Spectators watch the performance from a balcony while rickshaws pass by the crowd",
+    "A man vigorously waves a flag from above, overlooking the massive street crowd watching the performance.",
+    "A man wearing a hat and grey tank top takes the center of the circle to perform an energetic solo breakdance routine.",
+    "A quick, chaotic cutaway shows a large white bull being led through the busy street right next to the event.",
+    "The camera pans across the massive street crowd as the full group of dancers performs their most synchronized sequence of the song.",
+    "The performance ends abruptly, and the dancers immediately scatter, blending back into the dense street crowd."
+  ],
+  "pred": [
+    "Crowd gathers around a performer on stage at night",
+    "Man performs acrobatic moves near cityscape backdrop; attendees cheer enthusiastically"
+  ]
+}

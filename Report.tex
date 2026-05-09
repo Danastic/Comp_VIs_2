@@ -1,0 +1,478 @@
+\documentclass[sigconf, nonacm]{acmart}
+
+%% Remove copyright/conference footer boilerplate
+\settopmatter{printacmref=false}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\pagestyle{plain}
+
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{xurl}   % allows line-breaks inside \texttt URLs/paths
+
+%% -------------------------------------------------------
+%% Metadata
+%% -------------------------------------------------------
+\title{Event Detection and Video Summarization\\
+       {\normalsize Second Assignment --- Computer Vision 2026}}
+
+\author{Group 9}
+\affiliation{%
+  \institution{TVSUM Videos 33--36}
+}
+\email{}
+
+\begin{document}
+\maketitle
+
+%% -------------------------------------------------------
+\section{Introduction}
+%% -------------------------------------------------------
+
+This report documents our pipeline for the second assignment, in which we
+were assigned TVSUM videos 33--36: a graduation-day flash-mob speech~(33),
+a street flash mob for the ICC World T20~(34), an in-train
+classical-orchestra advertisement~(35), and a beekeeping interview~(36).
+The four videos were chosen deliberately to stress-test our models across
+very different visual styles---choreographed performance, outdoor crowd
+events, a confined public-transport setting, and a single-speaker
+documentary.
+
+Each video was annotated independently by both group members before either
+annotation was shared. We then built a six-step pipeline: measuring
+inter-annotator agreement, detecting events automatically with a
+Vision-Language Model, evaluating how well those detected events cover our
+annotations, localising each event in the video with two moment-retrieval
+methods, measuring localisation accuracy with IoU, and finally assembling a
+concatenated summary video per recording. All code lives under \texttt{pipeline/} and is invoked from the
+accompanying Jupyter notebook
+\texttt{Group9\_\allowbreak Second\_\allowbreak Assignment\_\allowbreak CV2026.ipynb}.
+
+%% -------------------------------------------------------
+\section{Annotations and Inter-Annotator Agreement}
+%% -------------------------------------------------------
+
+We followed the prescribed format---event description, timestamps
+formatted as MM:SS\,--\,MM:SS, and a subjectivity score---and produced
+between 8 and 15 events per video. Both annotators watched each recording
+in full before writing anything down, and only compared files once both
+were complete, so the agreement figures reflect genuine independent
+judgement rather than negotiated consensus.
+
+\subsection*{Subjectivity choices}
+
+Deciding which score to assign each event was the most deliberate part of
+the annotation process. We used the full $-2\ldots+2$ scale and tried to
+apply it consistently across all four videos. A rating of $+2$ went to
+moments that are structurally indispensable---events a viewer could not
+skip without losing the thread of the video. The first musician revealing
+herself on the train in video~35 (00:39--00:45) is a good example: without
+that moment the flash-mob concept never becomes clear. Similarly, the
+beekeeper opening a hive for the first time in video~36 (00:59--01:06) is
+the visual anchor around which everything else in that video hangs. Ratings
+of $+1$ went to events that add meaningful context without being strictly
+necessary---the conductor stepping forward in video~35 fits here because his
+presence enriches the scene but the music is already self-explanatory by
+that point. We assigned zero to events whose relevance depends on whether
+the viewer already knows something about the subject: a baby watching the
+musicians (video~35) is charming, but it is not load-bearing for the
+narrative. Negative ratings marked events we included because they colour
+the summary yet are not required to follow the main argument---the crowd
+laughing at an anecdote, or a close-up of a single honeycomb frame.
+
+This subjectivity had a direct downstream effect. Video~33, the
+graduation speech, produced the widest disagreement: one of us marked ten
+events, the other nine, and the scores diverged most on the speech
+segments, where the emotional weight of the words is invisible to any
+purely visual pipeline. That mismatch foreshadows the moment-retrieval
+results in Section~\ref{sec:mr}.
+
+\subsection*{Agreement metrics}
+
+We quantified agreement along three complementary dimensions. The
+\textbf{timeline~$\kappa$} projects both annotation sets onto a 1-second
+binary timeline (event / no event) and computes Cohen's Kappa, capturing
+whether the two annotators agreed on \emph{which moments} in the video
+are eventful. The \textbf{mean IoU} of greedily matched event pairs
+(threshold IoU $\geq 0.3$) measures boundary precision: when both
+annotators flagged the same event, how similar were their timestamps?
+The \textbf{saliency~$\kappa$} applies Cohen's Kappa to the $-2\ldots+2$
+ratings of matched pairs, revealing how much subjectivity influenced the
+importance scores.
+
+\begin{table}[h]
+  \centering
+  \caption{Inter-annotator agreement per video.}
+  \label{tab:iaa}
+  \begin{tabular}{lrrrrrr}
+    \toprule
+    Video & \#A & \#B & timeline $\kappa$ & saliency $\kappa$ & mean IoU \\
+    \midrule
+    33 & 10 &  9 & 0.148 & \phantom{$-$}0.600 & 0.655 \\
+    34 &  8 &  8 & 0.478 & \phantom{$-$}0.357 & 0.703 \\
+    35 &  9 & 10 & 0.384 & \phantom{$-$}0.226 & 0.554 \\
+    36 & 15 & 11 & 0.254 &            $-$0.235 & 0.717 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Table~\ref{tab:iaa} tells a consistent story across three different lenses.
+The mean IoU of matched events is high everywhere (0.55--0.72), meaning
+that when both annotators flagged the same moment they tended to draw very
+similar time windows. The timeline $\kappa$ is much lower (0.15--0.48),
+reflecting the fact that annotators disagreed less on \emph{where} events
+are than on \emph{how many} to mark. Video~33 is the starkest example: one
+annotator logged ten events by separating several short crowd reactions,
+while the other absorbed those into longer dance segments, producing a
+timeline $\kappa$ of only 0.148. The saliency $\kappa$ for video~36
+($-$0.235, below chance) is the most striking result in the table. The
+beekeeping video has no single narrative climax, so one annotator
+prioritised the beekeeper's explanatory speech while the other rated visual
+demonstrations highest---two internally coherent but mutually incompatible
+mental models of what makes the video meaningful. Across all four videos,
+mean saliency $\kappa$ is only 0.24, confirming that importance ratings are
+the loosest and most personal dimension of the annotation. For this reason
+we chose not to use saliency scores as a clip-selection signal in
+Section~\ref{sec:summary}: weighting by a metric the annotators disagreed
+on most would introduce more noise than signal.
+
+For the rest of the pipeline we built a merged ground-truth set per video
+by greedily matching pairs of events with IoU $\geq 0.3$, intersecting
+their timestamps (taking the stricter, shorter window), and keeping the
+higher saliency score. Any event that did not match an event from the other
+annotator was kept as-is. This produced between 10 and 19 ground-truth
+events per video (15, 10, 13, and 19 respectively).
+
+%% -------------------------------------------------------
+\section{VLM Event Detection}
+%% -------------------------------------------------------
+
+We used \textbf{HuggingFaceTB/\allowbreak SmolVLM2-\allowbreak 2.2B-\allowbreak Instruct}
+for automatic event detection. We chose it over Qwen2.5-VL-3B primarily
+because SmolVLM2's processor accepts either a video path or a sequence of
+sampled frames natively, fits comfortably within our 8\,GB GPU budget, and
+matches the demo notebook provided with the assignment, which means the
+grader can reproduce results without installing a Qwen licence.
+
+\subsection*{Prompting strategies and coverage}
+
+We compared three prompting strategies. The first, \textbf{direct/events},
+passes 6 uniformly sampled frames and asks the model to produce a
+\texttt{Salient event N:} numbered list. The second,
+\textbf{direct/timed}, uses the same frames and prompt but additionally
+requests a \texttt{[MM:SS-MM:SS]} timestamp for each event. The third,
+\textbf{caption-aggregate}, captions each frame individually and then feeds
+all captions back to SmolVLM2 with a merging prompt, following the strategy
+hinted at in the demo notebook. We measured coverage by encoding both the annotated and predicted event
+descriptions with \texttt{sentence-transformers/\allowbreak all-MiniLM-L6-v2}
+and computing cosine similarity; an annotated event counts as covered if
+its best-matching predicted event has similarity $\geq 0.5$.
+
+\begin{table}[h]
+  \centering
+  \caption{VLM event-detection coverage. Strategy abbreviations:
+           \emph{DE} = direct/events, \emph{DT} = direct/timed,
+           \emph{CA} = caption-aggregate.
+           \emph{cov@0.5}: fraction of annotated events covered at
+           similarity $\geq 0.5$. \emph{sim}: mean best-match similarity.}
+  \label{tab:coverage}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{lcrrrr}
+    \toprule
+    Video & Strat. & $n_\text{ann}$ & $n_\text{pred}$ & cov@0.5 & sim \\
+    \midrule
+    33 & DE & 15 & 4 & 0.00          & 0.235 \\
+    33 & DT & 15 & 1 & 0.00          & 0.167 \\
+    33 & CA & 15 & 2 & 0.13          & 0.392 \\
+    \midrule
+    34 & DE & 10 & 4 & \textbf{0.30} & \textbf{0.428} \\
+    34 & DT & 10 & 5 & 0.10          & 0.361 \\
+    34 & CA & 10 & 2 & 0.10          & 0.344 \\
+    \midrule
+    35 & DE & 13 & 4 & 0.08          & 0.325 \\
+    35 & DT & 13 & 1 & 0.00          & 0.177 \\
+    35 & CA & 13 & 1 & 0.00          & 0.114 \\
+    \midrule
+    36 & DE & 19 & 5 & 0.21          & \textbf{0.430} \\
+    36 & DT & 19 & 1 & 0.00          & 0.018 \\
+    36 & CA & 19 & 1 & \textbf{0.42} & \textbf{0.491} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The clearest pattern in Table~\ref{tab:coverage} is that
+\textit{direct/timed} almost always fails. SmolVLM2 either refuses to
+produce timestamps entirely or collapses the whole video into one spurious
+window such as \texttt{00:00--00:05}. Several prompt variants---``use
+MM:SS-MM:SS format'', ``include explicit timestamps'', ``each event must
+specify a start and end time''---produced the same failure, suggesting the
+model simply has no time-grounded visual supervision and cannot be prompted
+into acquiring it. By contrast, \textit{direct/events} reliably extracts
+4--5 events per video and achieves the best mean similarity on video~34
+(0.428). The \textit{caption-aggregate} strategy is interesting: it
+requires 7+ model calls per video and tends to collapse everything into one
+coarse description, but that one description can be a good semantic match
+when the video has a clear visual theme---hence 0.42 coverage on the
+beekeeping video, where every frame shares the same setting and subject.
+Overall, no strategy crosses the 0.5 coverage threshold on average, which
+is the expected zero-shot ceiling for a 2.2B model viewing only 6 frames.
+For practical use, \textit{direct/events} is the right choice: it produces
+the most events, the highest mean similarity in three of the four videos,
+and is single-pass rather than requiring one model call per frame.
+
+\subsection*{Failure modes and prompt history}
+
+Four failure patterns emerged consistently. Dialogue-driven events were
+missed entirely: because SmolVLM2 does not transcribe speech, an event
+annotated as ``the speaker concludes by urging the students to let go
+of their fears'' (video~33, 03:30--03:40, saliency $+1$) was detected
+only as ``a bald man speaking into a microphone''---a mean embedding
+similarity of 0.18, well below the 0.5 threshold. Repetitive choreography
+(videos~33 and~34) collapses into a single event description even when
+the annotations distinguish 3--5 distinct formation changes, because the
+frames look nearly identical to the model. Domain-specific vocabulary in
+video~36 is partially lost: the model describes ``a person in a white suit
+holding a frame'' but never mentions ``honey super'' or ``queen-bee cage'',
+which are the terms our annotations use. Finally, greedy decoding with many
+similar frames caused the model to repeat the same event description in a
+loop; we mitigated this by setting \texttt{repetition\_penalty=1.3} and
+\texttt{no\_repeat\_ngram\_size=4}, which eliminated obvious loops at the
+cost of occasionally shorter outputs.
+
+On the prompt side, we found that generic instructions such as ``describe
+the video'' produced free-form paragraphs that our regex parser could not
+reliably split into discrete events. Switching to a templated
+\texttt{Salient event N:} instruction with a ``Return only the numbered
+list'' suffix raised the fraction of successfully parsed outputs from
+roughly 40\,\% to roughly 95\,\%. One non-obvious discovery was that
+including angle brackets (\texttt{<\ldots>}) anywhere in the prompt caused
+the SmolVLM2 chat-template to emit zero tokens---an interaction with the
+model's special-token vocabulary that took several iterations to diagnose.
+
+%% -------------------------------------------------------
+\section{Moment Retrieval}
+\label{sec:mr}
+%% -------------------------------------------------------
+
+We originally planned to use Lighthouse CG-DETR as our primary moment
+retrieval model, but the pre-trained checkpoint is absent from HuggingFace
+and the official download script on the current \texttt{main} branch
+returns HTTP~404. Rather than submit a non-functional integration, we
+report \textbf{two zero-shot CLIP variants} that share the same retrieval
+code path but differ in backbone capacity: CLIP-B/32
+(\texttt{openai/\allowbreak clip-vit-base-patch32}, 88\,M parameters) and CLIP-L/14
+(\texttt{openai/\allowbreak clip-vit-large-patch14}, 304\,M parameters). For each
+query, frames are sampled at 1\,Hz and encoded with the CLIP image tower;
+the query text is encoded with the text tower; per-frame cosine similarities
+are averaged over sliding windows of length $\{4, 8, 16, 32\}$\,s; and the
+highest-mean window is returned after temporal NMS at IoU threshold 0.3.
+Both models additionally support paraphrase fusion, in which three
+deterministic rephrasings of each query (the original, ``a video clip
+showing X'', and ``footage of X'') are retrieved separately and their
+windows merged with NMS.
+
+\subsection*{Spec-aligned evaluation: VLM events as queries}
+
+Following the assignment's intended pipeline, we first ran CLIP-L/14
+using the VLM \textit{direct\_events} descriptions as queries---17 events
+in total across the four videos---and measured IoU against the nearest
+ground-truth annotation window.
+
+\begin{table}[h]
+  \centering
+  \caption{CLIP-L/14 moment retrieval with VLM-detected events as
+           queries, evaluated against the nearest GT annotation.}
+  \label{tab:vlm-mr}
+  \begin{tabular}{lrrr}
+    \toprule
+    Video & VLM queries & mIoU & R@0.3 \\
+    \midrule
+    33 & 4 & 0.040 & 0.000 \\
+    34 & 4 & 0.186 & 0.250 \\
+    35 & 4 & 0.333 & 0.750 \\
+    36 & 5 & 0.255 & 0.400 \\
+    \midrule
+    Overall & 17 & \textbf{0.206} & \textbf{0.353} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The overall mIoU of 0.206 is notably higher than the 0.113 reported below
+for annotated queries, but the comparison is not straightforward. The VLM
+produces only 4--5 coarse queries per video---descriptions like ``crowd
+dancing'' or ``people inside a train''---whereas the annotated ground truth
+contains 10--19 fine-grained event descriptions per video. CLIP's joint
+image-text space was trained on similarly coarse web captions, so the VLM
+queries land closer to the model's natural operating regime. Video~35
+illustrates both the strength and the limit of this approach: R@0.3 of
+0.75 means three of the four VLM queries retrieved a reasonable window, but
+the missing query corresponded to the advertisement text reveal at the end
+of the video, which requires reading on-screen text rather than recognising
+visual content.
+
+\subsection*{Fine-grained evaluation: annotated events as queries}
+
+To stress-test the retrieval with precise, human-authored descriptions, we
+ran all four method variants on the full 57 merged ground-truth events.
+
+\begin{table}[h]
+  \centering
+  \caption{Moment retrieval on all 57 annotated ground-truth events.}
+  \label{tab:mr}
+  \begin{tabular}{lrrr}
+    \toprule
+    Method & mIoU & R@0.3 & R@0.5 \\
+    \midrule
+    CLIP-B/32            & 0.089 & 0.140 & 0.070 \\
+    CLIP-B/32 + fusion   & 0.082 & 0.105 & 0.053 \\
+    \textbf{CLIP-L/14}   & \textbf{0.113} & \textbf{0.211} & 0.088 \\
+    CLIP-L/14 + fusion   & 0.107 & 0.193 & \textbf{0.105} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+CLIP-L/14 is the clear winner, gaining roughly 27\,\% in mIoU and 50\,\%
+in R@0.3 over the smaller backbone at approximately three times the
+inference cost---still under 20 seconds per video on our hardware.
+Paraphrase fusion, however, consistently hurts performance: both backbones
+lose mIoU and R@0.3 when fusion is applied, though R@0.5 increases
+slightly for CLIP-L/14 (0.105 vs.\ 0.088). We interpret this as fusion
+narrowing the predicted windows---which occasionally helps at the strict
+0.5 threshold---while blurring the most discriminative text embedding,
+which hurts coarse alignment. A cross-attention architecture such as
+CG-DETR, which can process multiple query phrasings jointly, would likely
+profit from the same paraphrase inputs.
+
+The per-category breakdown reveals where the model succeeds and where it
+breaks down fundamentally. Performance events---dancing, playing
+instruments---account for 29 of the 57 ground-truth events and achieve a
+mean IoU of 0.174, the highest of any category, because CLIP's training
+data contains abundant examples of musicians and choreography. Beekeeping
+events (14 of 57) score 0.070: CLIP knows what bees and hives look like,
+but cannot distinguish ``the beekeeper shows a frame'' from ``the beekeeper
+opens a hive''. Speech and dialogue events (9 of 57) score exactly 0.000
+across all four methods. This is not a failure of any particular design
+choice---it is a fundamental limitation: CLIP has no access to audio or
+text within the video frame, so descriptions that depend on what someone
+is saying cannot be matched by visual similarity alone. The relationship
+between saliency and IoU is non-monotonic and revealing. The most important
+events (saliency $+2$, 21 events) achieve mean IoU 0.151; events rated
+$+1$ (14) drop to 0.091; events rated 0 (11) drop further to 0.027;
+then $-1$ events (8) recover to 0.127. The dip at zero and $+1$ captures
+exactly the transitional moments our annotations describe as ``contextually
+necessary but not visually distinctive''---a conductor stepping forward, a
+crowd beginning to record on their phones. Those events are hardest to
+retrieve because their visual signature is generic.
+
+%% -------------------------------------------------------
+\section{Video Summary Generation}
+\label{sec:summary}
+%% -------------------------------------------------------
+
+For each video we selected the predicted windows from CLIP-L/14, which
+achieved the best overall mIoU. We then applied a short post-processing
+pass: dropping any segment shorter than 1.5\,s, merging segments separated
+by a gap of 1\,s or less, sorting the result chronologically, and
+concatenating the clips into a single MP4 using the OpenCV writer (with an
+ffmpeg fallback where available).
+
+\begin{table}[h]
+  \centering
+  \caption{Generated summary statistics.}
+  \label{tab:summaries}
+  \begin{tabular}{lrrr}
+    \toprule
+    Video & Clips & Summary & Source \\
+    \midrule
+    33 &  9 & 31\,s & ${\approx}$7:30 \\
+    34 &  9 & 28\,s & ${\approx}$2:25 \\
+    35 &  8 & 28\,s & ${\approx}$2:25 \\
+    36 & 11 & 40\,s & ${\approx}$4:00 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The summaries are concise---7 to 20\,\% of the source duration---because
+we clip each segment to its predicted window without adding any padding.
+Relevance is strong for visually distinctive content: videos~33--35
+produce summaries dominated by dancing and instrument-playing segments,
+which are exactly the moments CLIP retrieves most accurately. The
+beekeeping summary is weaker on relevance because CLIP's generic picks
+(hands holding objects, white protective suit) correspond to visually
+similar frames throughout the video rather than the specific named
+demonstrations the beekeeper is giving. Coverage suffers predictably from
+the speech problem: counting only events with IoU $\geq 0.3$, the summaries
+capture 21\,\% of all ground-truth events, and none of the nine
+speech-only events appear in any summary. Coherence is maintained locally
+by the chronological ordering and the gap-merging step, but global
+coherence in video~36 breaks down because the beekeeper's explanations
+build on one another cumulatively, and extracting isolated visual clips
+loses the thread of his argument. The subjectivity disagreement has a
+direct trace here: because the two annotators assigned opposite saliency
+rankings to the same events in video~36, the merged ground truth treats
+narrative speech events and visual demonstrations as equally important.
+CLIP retrieves the visually distinctive ones and discards the rest,
+producing a summary that satisfies neither annotator's conception of
+what the video is fundamentally about.
+
+%% -------------------------------------------------------
+\section{Critical Reflections and Possible Improvements}
+%% -------------------------------------------------------
+
+The result that stands out most from this assignment is not the IoU number
+itself but what drives it: the annotation process introduces more variance
+than any modelling decision we made. Our two annotators agreed well on
+boundaries (mIoU 0.65 on average) but substantially less on event count
+and saliency. Every IoU figure reported in Section~\ref{sec:mr} is measured
+against a merged ground truth that absorbs that disagreement, so the numbers
+should be read with that uncertainty in mind.
+
+The single most impactful technical improvement would be adding automatic
+speech recognition. All nine speech-and-dialogue events in our ground truth
+achieve zero IoU under every method we tested, not because the retrieval
+architecture is wrong but because CLIP has no way to process spoken
+content. A lightweight ASR model such as Whisper-tiny (80\,MB) would
+allow moment-retrieval queries to be matched against a transcript, and we
+expect this one change would have a larger effect on summary quality than
+any visual backbone upgrade.
+
+Two improvements that operate within the existing visual pipeline are also
+worth pursuing. Paraphrase fusion did not help in our experiments, but we
+used only three static rephrasings. A model that generates
+semantically diverse paraphrases---rather than fixed string templates---might
+provide a genuine signal boost, especially for beekeeping events where the
+annotated descriptions use specialist vocabulary that CLIP's training data
+may not associate strongly with the corresponding images. The saliency score
+could also be reintroduced at summary-generation time, not as an annotation
+metric but as a weighting signal produced by a small language model given
+the event description and the retrieved clip. Selecting clips by predicted
+importance rather than treating all retrieved windows equally would give the
+summary a more coherent narrative arc, particularly for video~36 where the
+cumulative structure of the beekeeper's explanation matters most.
+
+Finally, the CG-DETR comparison we planned would have been instructive.
+Published results on QVHighlights report mIoU around 0.40 for CG-DETR,
+compared to 0.11 for our best CLIP variant. We implemented the integration code in
+\texttt{pipeline/\allowbreak moment\_retrieval.py}, but the official
+pre-trained checkpoint is no longer publicly available, so we
+cannot report actual numbers. Once a working checkpoint is released, the
+comparison would be a direct test of whether the 25--30 IoU point gap
+holds on our informal, annotator-produced ground truth.
+
+%% -------------------------------------------------------
+\section{Conclusion}
+%% -------------------------------------------------------
+
+We built a complete event-detection-to-summary-video pipeline using
+zero-shot pretrained models, evaluated it against our own annotations with
+three inter-annotator agreement metrics and IoU across two moment-retrieval
+architectures, and ran failure analysis broken down by event category and
+saliency level. The dominant finding is that subjectivity in annotation
+is the largest single source of variance in the whole pipeline: the two
+annotators agreed on boundaries but disagreed on what counts as an event
+and how important each one is, and those disagreements propagate into every
+downstream metric. The second dominant finding is that zero-shot visual
+retrieval fails completely on speech events, and the practical path forward
+for this kind of pipeline runs through automatic speech recognition rather
+than through larger or better-tuned visual encoders.
+
+\end{document}
